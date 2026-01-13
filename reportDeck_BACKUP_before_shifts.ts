@@ -21,9 +21,9 @@ import type { SlideData } from './types';
 //   10. Compute & Energy (was 6)
 // ============================================================
 
-export type Section = { title: string; startSlide: number };
+type Section = { title: string; startSlide: number };
 
-export const RAW_SLIDES: SlideData[] = [
+const RAW_SLIDES: SlideData[] = [
   // ═══════════════════════════════════════════════════════════════════
   // INTRO (Slides 0-5)
   // ═══════════════════════════════════════════════════════════════════
@@ -38,565 +38,552 @@ export const RAW_SLIDES: SlideData[] = [
     layout: 'center',
   },
 
-  // Slide 1 — Prologue
+  // Slide 1 — A note from the team
   {
     id: 2,
-    title: '00 / prologue',
-    subtitle: "2025 wasn't just a year in the ai calendar.",
+    title: 'a note from the team',
+    subtitle: "we made this because 2025 didn't feel like a year.",
     visual: 'breath',
     layout: 'split',
     content: [
-      "it was the moment **context became the most expensive resource on earth**.",
-      "we called this report the context gap because it identifies the primary fracture in modern civilization: the distance between the volume of data a machine can generate and the amount of meaning a human can integrate without losing their agency, their sanity, or their will.",
-      "**machines have conquered the complexity barrier.**",
-      "**humans have hit the context wall.**",
-      "ai is accelerating. humans are buffering.",
+      "it felt like the year **context became expensive**.",
+      "machines got faster at producing outputs.",
+      "humans got slower at holding meaning, attention, and coherent direction.",
+      "this isn't a \"trends\" deck.",
+      "it's closer to a navigation tool.",
+      "we're not trying to predict the future with confidence theater.",
+      "we're trying to show **what changed**, **why it matters**, and **what the human layer can do** — so you can make better calls in 2026.",
     ],
+    caption: "— ai mindset (research + labs team)",
     source: { label: 'AI Mindset + Community', url: 'https://aimindset.org' },
   },
 
-  // Slide 2 — The Battle for Agency
+  // Slide 2 — What this is (and isn't)
   {
     id: 3,
-    title: '01 / the battle for agency',
-    subtitle: 'why are we doing this?',
+    title: "what this is (and isn't)",
+    subtitle: 'this is: a paired map.',
     visual: 'network',
-    layout: 'split',
-    content: [
-      "we are solving a fundamental crisis: **the loss of agency**.",
-      "in a world where generating content, code, and ideas is effectively free, the act of verifying them has become a luxury. we are currently paying a **reliability tax** with our time and attention.",
-      "if you cannot audit what the algorithm proposes, you are no longer a leader—you are a passenger.",
-      "",
-      "this report is your perimeter defense against:",
-      "**context obesity:** cognitive paralysis where you are stuffed with low-value data but starved for meaning. burnout is working memory overflow.",
-      "**the reliability tax:** $67 billion in annual losses. creating is free; verifying is expensive.",
-      "**the responsibility void:** decisions being made by agents for whose mistakes no human is held accountable.",
-      "**data inbreeding:** if ai trains on ai-generated data recursively, models degrade. humans become the only source of clean signal.",
+    layout: 'paired',
+    leftTitle: "you'll go through 10 waves",
+    leftContent: [
+      '**machine signal** (capability / deployment / economics)',
+      '**human signal** (cognition / identity / culture)',
+      '**the context gap** (where coordination breaks)',
+    ],
+    rightTitle: "this isn't",
+    rightContent: [
+      'a hype deck',
+      'a moral panic',
+      'a consulting pdf that says nothing new',
     ],
   },
 
-  // Slide 3 — For the Sovereign Individual (HIDDEN - temporarily commented out)
-  /*
+  // Slide 3 — What we mean by "context gap"
   {
     id: 4,
-    title: '02 / for the sovereign individual',
-    subtitle: 'who is this for?',
+    title: 'what we mean by "context gap"',
+    subtitle: 'the distance between:',
     visual: 'gap',
     layout: 'split',
     content: [
-      "this is not an \"ai adoption\" deck for corporate checklists. it is a **sovereignty reset** for those who take responsibility for their own intelligence and their own business.",
-      "",
-      "**for the architects of intent:** those tired of being \"prompt engineers\" and ready to lead the machine's logic.",
-      "**for leaders:** who realize that 45% of middle management layers will dissolve under the weight of agentic coordination.",
-      "**for the builders:** who want to own their \"weights\" and their local data, rather than renting their brain from a cloud giant.",
-      "",
-      "we have synthesized **72+ primary sources**—from arxiv research papers to 8-hour deep dives with silicon valley architects, from mckinsey enterprise reports to gartner strategic forecasts—to give you a navigation tool for sovereignty, not just \"trends.\"",
+      '1. the context a system needs to act well',
+      'and',
+      '2. the context a human can actually hold without degrading decisions.',
+      '',
+      'and the real losses:',
+      '**time** (the non-renewable one)',
+      '**money** (busy ≠ effective)',
+      '**reputation** (sloppy decisions, missed nuance)',
     ],
   },
-  */
 
-  // Slide 4 — The 11 Shifts Architecture
+  // Slide 4 — The thinkers & research lines behind the frame
   {
     id: 5,
-    title: '02 / the 11 shifts architecture',
-    subtitle: 'a paired map in 4 layers.',
+    title: 'the thinkers & research lines behind the frame',
+    subtitle: 'the backbone behind the 150+ papers, benchmarks, policy docs, and infra reports we reviewed.',
     visual: 'hierarchy',
     layout: 'split',
     content: [
-      '**🧱 foundation layer (3):** energy, work, sovereignty — the physical and economic base',
-      '**🧠 cognition layer (3):** reasoning, knowledge, discovery — how we think and learn',
-      '**🛡️ interface layer (3):** coding, matter, defense — how we build and protect',
-      '**❤️ humanity layer (2):** narrative, intimacy — what keeps us human',
-      '',
-      'this is: **machine signal** (capability / deployment / economics) ↔ **human signal** (cognition / identity / culture) ↔ **the context gap** (where coordination breaks)',
-      "this isn't: a hype deck, a moral panic, or a consulting pdf that says nothing new.",
+      '**attention & scarcity** (herbert simon): attention becomes the bottleneck.',
+      '**cognition under load** (cognitive load / hci; kahneman as a metaphor): more inputs → worse judgment; "fast guess" vs "slow verify."',
+      '**acceleration & identity** (toffler → rosa): speed reshapes norms and self.',
+      '**tools as minds** (clark & chalmers): tools extend cognition; partnership beats replacement.',
+      '**sovereignty as cultural tech** (hirschman; balaji): "exit" becomes everyday language for autonomy.',
     ],
   },
 
+  // Slide 5 — Our signal base (AI Mindset)
+  {
+    id: 6,
+    title: 'our signal base (ai mindset)',
+    subtitle: 'we trust signals — especially signals with a feedback loop.',
+    visual: 'STATS_ANIMATED',
+    layout: 'stats',
+    stats: [
+      { value: '6', label: 'labs', color: 'red' },
+      { value: '200+', label: 'graduates', color: 'black' },
+      { value: '23+', label: 'countries', color: 'black' },
+      { value: '100+', label: 'live hours', color: 'red' },
+      { value: '67%', label: 'completion', color: 'black' },
+    ],
+    content: [
+      'we built this report as the yearly reset artifact for the ai mindset + community ecosystem — and then pressure-tested the ideas in practice.',
+      'thanks: alex p, ray svitla, sergei khabarov, and anca for finishing this over the christmas holidays.',
+    ],
+    source: { label: 'AI Mindset Labs', url: 'https://aimindset.org/ai-mindset-w25' },
+  },
+
   // ═══════════════════════════════════════════════════════════════════
-  // 11 TECTONIC SHIFTS — 4 LAYERS
+  // 10 WAVES — RESTRUCTURED
   // ═══════════════════════════════════════════════════════════════════
 
   // Section divider
   {
     id: 7,
-    title: '11 tectonic shifts',
-    subtitle: 'machines ↔ humans across 4 layers',
+    title: '10 waves',
+    subtitle: 'machines ↔ humans',
     visual: 'SECTION_DIVIDER',
+    sectionTitle: 'waves',
     dark: true,
-    caption: 'foundation → cognition → interface → humanity\neach shift creates fractures in our reality.',
+    caption: 'each wave builds on the previous — creating the context gap.',
     layout: 'center',
   },
 
   // ═══════════════════════════════════════════════════════════════════
-  // 🧱 FOUNDATION LAYER — Energy, Work, Sovereignty
+  // CORE CHAIN (Waves 1-6) — Strong causation
   // ═══════════════════════════════════════════════════════════════════
 
-  // SHIFT 01: The Cost (Energy) — INTRO
+  // WAVE 1: System-2 Reasoning — INTRO
   {
     id: 8,
-    title: 'shift 01: the cost → physical limits',
-    subtitle: 'from digital abundance to energy scarcity',
-    visual: 'battery',
+    title: 'wave 1: system-2 reasoning',
+    subtitle: '"chat" is turning into delegation.',
+    visual: 'trust',
     layout: 'loop-intro',
   },
-  // SHIFT 01: The Cost (Energy) — FULL
+  // WAVE 1: System-2 Reasoning — FULL
   {
     id: 9,
-    title: 'shift 01: the cost → physical limits',
-    subtitle: 'physics takes revenge. the constraint for 2026 isn\'t chips; it\'s "intelligence per watt."',
-    visual: 'battery',
+    title: 'wave 1: system-2 reasoning',
+    subtitle: '"chat" is turning into delegation.',
+    visual: 'trust',
     layout: 'loop',
     loopData: {
-      machine: '**the energy wall:** ai demand for data center power projected to grow **160% by 2030**. the physical grid cannot be built fast enough to support ai expansion.\n\n**intelligence/watt:** the focus shifts from raw compute to "inference efficiency" as the critical metric. more compute doesn\'t equal more value if it can\'t be powered.\n\n**$7 trillion** event: big tech capex for 2025 alone is **$200b+**. the **40x investment-value gap**: $600b needed in annual revenue to justify infrastructure spend, but consumer spend is only $12b.',
-      human: '**guilt computing:** users face the reality that complex reasoning has a physical toll — every ai query consumes water and generates co2. the disconnect between "green ai" corporate promises and "greed ai" reality.\n\n**hardware sovereignty:** shift to on-device ai to decouple from cloud latency, costs, and energy volatility. privacy becomes a side benefit; energy independence is the driver.',
-      gap: 'the disconnect between infinite "digital ideas" and hard "physical matter." while we imagine a billion agents, we cannot power them. this is the bottleneck of "the dream."',
+      machine: 'agents don\'t just answer — they do (plan, act, call tools, ship).\n"slow thinking" moves from research concept to product feature: fewer obvious failures, more consistent multi-step output.',
+      human: 'people don\'t trust "magic." they trust **auditable work**.\nthe moment an agent touches money, customers, or reputation, humans demand: _show me your steps_.',
+      gap: 'agents operate at machine speed, but accountability remains human speed.\nverification becomes ethics — "can you just approve this?" becomes the most expensive sentence in a company.',
     },
     sources: [
-      { label: 'IEA — AI Energy Demand Projections', url: 'https://www.iea.org/' },
-      { label: 'Goldman Sachs — Gen AI: Too Much Spend', url: 'https://www.goldmansachs.com/intelligence/pages/gen-ai-too-much-spend-too-little-benefit.html' },
-      { label: 'McKinsey — $7 Trillion Infrastructure', url: 'https://www.mckinsey.com/' },
-      { label: 'No Priors Ep 144 — Elad Gil on Intelligence/Watt', url: 'https://www.no-priors.com/' },
+      { label: 'Li et al. — Reasoning LLMs Survey', url: 'https://arxiv.org/abs/2502.17419' },
+      { label: 'OpenAI — SWE-Bench Verified', url: 'https://openai.com/index/introducing-swe-bench-verified/' },
+      { label: 'x402 — Internet-native payments for AI agents', url: 'https://www.x402.org/' },
     ],
   },
-  // SHIFT 01: Energy — EVIDENCE
+  // WAVE 1: System-2 Reasoning — EVIDENCE
   {
     id: 100,
-    title: 'the cost: the evidence',
-    visual: 'battery',
+    title: 'reasoning: the evidence',
+    visual: 'trust',
     layout: 'loop-evidence',
     loopNumber: 1,
     evidenceData: {
       keyStats: [
-        { value: '160%', label: 'AI energy demand surge by 2030', source: 'IEA / Goldman Sachs' },
-        { value: '40x', label: 'Gap: $500B infrastructure vs $12B consumer spend', source: 'Harvard / Goldman' },
-        { value: '$7T', label: 'Total AI infrastructure requirement', source: 'McKinsey / Sam Altman' },
+        { value: '71.7%', label: 'OpenAI o3 on SWE-bench Verified', source: 'OpenAI 2025' },
+        { value: '96.7%', label: 'o3 on AIME math benchmark', source: 'OpenAI 2025' },
+        { value: '90-95%', label: 'DeepSeek R1 cheaper than o1', source: 'DeepSeek 2025' },
       ],
       researchHighlights: [
-        'The physical grid **cannot be built fast enough** to support AI expansion',
-        'Focus shifts from raw compute (FLOPs) to **"Intelligence per Watt"** as critical metric',
-        'Tech giants reviving **decommissioned nuclear reactors** (Three Mile Island for Microsoft) and obsolete fossil fuel plants',
+        '**o3** achieves 2727 Codeforces rating vs R1 (2029) and o1 (1891)',
+        'Claude 3.7 solves **21/28** puzzles vs DeepSeek R1 (18/28) – actual reasoning, not memorization',
+        '"Slow thinking" moves from research concept to **product feature**',
       ],
-      industryData: ['Microsoft + Three Mile Island', 'Google Data Centers', 'AWS Infrastructure', 'Meta CapEx'],
+      industryData: ['OpenAI o3', 'DeepSeek R1', 'Claude 3.7 Sonnet', 'Gemini 2.0'],
     },
     sources: [
-      { label: 'IEA — AI Energy Projections', url: 'https://www.iea.org/' },
-      { label: 'Goldman Sachs — Investment Gap', url: 'https://www.goldmansachs.com/intelligence/pages/gen-ai-too-much-spend-too-little-benefit.html' },
-      { label: 'McKinsey — Infrastructure Requirements', url: 'https://www.mckinsey.com/' },
-      { label: 'Reuters — Nuclear Revival', url: 'https://www.reuters.com/' },
+      { label: 'Li et al. — Reasoning LLMs Survey', url: 'https://arxiv.org/abs/2502.17419' },
+      { label: 'OpenAI — SWE-Bench Verified', url: 'https://openai.com/index/introducing-swe-bench-verified/' },
+      { label: 'Vellum — Claude 3.7 vs o1 vs DeepSeek R1', url: 'https://www.vellum.ai/blog/claude-3-7-sonnet-vs-openai-o1-vs-deepseek-r1' },
+      { label: 'PromptLayer — o3 vs DeepSeek R1 Analysis', url: 'https://blog.promptlayer.com/openai-o3-vs-deepseek-r1-an-analysis-of-reasoning-models/' },
     ],
   },
 
-  // TRANSITION Energy → Work
+  // TRANSITION 1→2
   {
     id: 200,
     title: 'how this enables the next shift',
-    subtitle: 'when infrastructure exists, labor displacement accelerates.',
+    subtitle: 'when agents can think, they can be connected.',
     visual: 'bridge',
     layout: 'center',
     dark: true,
     content: [
-      'with energy infrastructure in place, ai moves from research labs to **production deployment**.',
+      'system-2 reasoning (planning, tool use, multi-step execution) makes it possible to **chain agents into workflows**.',
       '',
-      'the constraint was power. now the constraint is **human acceptance**.',
-      'agentic labor becomes real.',
+      'a single thinking agent is useful.',
+      'orchestrated agents become **infrastructure**.',
     ],
   },
 
-  // SHIFT 02: The Displacement (Agentic Labor) — INTRO
+  // WAVE 2: Orchestration Layers — INTRO
   {
     id: 10,
-    title: 'shift 02: the displacement (agentic labor)',
-    subtitle: 'from copilot → autonomous coworker',
-    visual: 'factory',
+    title: 'wave 2: orchestration layers',
+    subtitle: 'the center of gravity moves from chat to agentic workflows.',
+    visual: 'overload',
     layout: 'loop-intro',
   },
-  // SHIFT 02: The Displacement (Agentic Labor) — FULL
+  // WAVE 2: Orchestration Layers — FULL
   {
     id: 11,
-    title: 'shift 02: the displacement (agentic labor)',
-    subtitle: 'the death of middle management.',
-    visual: 'factory',
+    title: 'wave 2: orchestration layers',
+    subtitle: 'the center of gravity moves from chat to agentic workflows.',
+    visual: 'overload',
     layout: 'loop',
     loopData: {
-      machine: '**the klarna benchmark:** one ai assistant replaced **700 full-time agents**, slashed resolution time (11m → 2m), drove **$40m profit**, and achieved **25% fewer repeat inquiries** than humans.\n\n**the agentic enterprise:** transition from "assistant" to "autonomous coworker." **76% of executives** view ai as a "coworker" rather than a tool. agents receive wallets (x402 protocol), tools (mcp), and "hr for ai."\n\n**service-as-software:** saas model shifts to agents that execute complete workflows. from selling "software licenses" to selling "executed outcomes."',
-      human: '**the reliability tax:** **$67 billion** in losses from ai hallucinations and errors. companies shift budgets from "paying for labor" to "paying for audit." creating is free; verifying is expensive.\n\n**managerial collapse:** predicted **45% reduction in middle management layers** as ai handles coordination. the tension between "retrofit" vs "reengineer."\n\n**role shift:** humans move from "doers" to "consiglieres" and auditors. **23.2 million** u.s. jobs directly exposed to ai displacement.',
-      gap: 'when an agent acts, who owns the mistake? managers delegate more than they can audit, creating hidden "technical debt" and "strategic blindness."',
+      machine: 'systems that call tools, execute steps across software, and coordinate across services.\nthe center of gravity moves from chat to **agentic workflows**.',
+      human: 'overload becomes baseline: too many threads, tools, notifications, pseudo-tasks.\nevery new layer adds fear: "who owns the workflow?" "where does my data go?" "can i exit? ◡̈"',
+      gap: 'when systems connect, context leaks across apps — humans can\'t see the full graph, but remain responsible for outcomes.\nthe question becomes: **who is the author of outcomes?**',
     },
     sources: [
-      { label: 'Klarna — AI Assistant Case Study', url: 'https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/' },
-      { label: 'MIT Sloan/BCG — The Emerging Agentic Enterprise', url: 'https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/' },
-      { label: 'SHRM — 23.2M Jobs Exposed', url: 'https://www.shrm.org/' },
-      { label: 'x402 — Agent Payments Protocol', url: 'https://www.x402.org/' },
+      { label: 'Anthropic — Model Context Protocol (MCP)', url: 'https://www.anthropic.com/news/model-context-protocol' },
+      { label: 'Gartner — Top 10 Strategic Technology Trends 2025', url: 'https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-the-top-10-strategic-technology-trends-for-2025' },
+      { label: 'AI Mindset — Context Obesity', url: 'https://hackernoon.com/youre-not-burned-out-youve-got-context-obesity' },
     ],
   },
-  // SHIFT 02: Displacement — EVIDENCE
+  // WAVE 2: Orchestration Layers — EVIDENCE
   {
     id: 101,
-    title: 'the displacement: the evidence',
-    visual: 'factory',
+    title: 'orchestration: the evidence',
+    visual: 'overload',
     layout: 'loop-evidence',
     loopNumber: 2,
     evidenceData: {
       keyStats: [
-        { value: '88% vs 6%', label: 'Adoption rate vs transformation rate - execution gap', source: 'McKinsey' },
-        { value: '23.2M', label: 'U.S. jobs highly exposed to displacement', source: 'SHRM' },
-        { value: '$40M', label: 'Annual profit from single agentic deployment (Klarna)', source: 'Klarna' },
+        { value: '97M+', label: 'MCP SDK monthly downloads (Python + TypeScript)', source: 'Linux Foundation' },
+        { value: '75+', label: 'Claude MCP connectors available', source: 'Anthropic 2025' },
+        { value: '33%', label: 'enterprise software with agentic AI by 2028', source: 'Gartner 2025' },
       ],
       researchHighlights: [
-        '**$67 billion** annual losses from hallucinations and errors (Reliability Tax)',
-        '**76%** of executives viewing AI as "Coworker" not tool',
-        '**45%** predicted reduction in middle management layers',
-        '**32%** of IT jobs have >50% automatable tasks - tech workers most vulnerable',
+        'MCP donated to **Linux Foundation** (Dec 2025) – becoming industry standard',
+        'Platinum members: Amazon, Anthropic, Google, Microsoft, OpenAI',
+        'Agents now use **hundreds to thousands** of tools per deployment',
       ],
-      industryData: ['Klarna AI Assistant', 'x402 Protocol', 'Service-as-Software', 'Agentic Enterprise'],
+      industryData: ['MCP Protocol', 'OpenAI Agents SDK', 'LangChain', 'n8n', 'Zapier'],
     },
     sources: [
-      { label: 'Klarna — AI Assistant Case Study', url: 'https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/' },
-      { label: 'MIT Sloan/BCG — Agentic Enterprise', url: 'https://sloanreview.mit.edu/projects/the-emerging-agentic-enterprise-how-leaders-must-navigate-a-new-age-of-ai/' },
-      { label: 'SHRM — Job Displacement Data', url: 'https://www.shrm.org/' },
-      { label: 'McKinsey — State of AI', url: 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai' },
+      { label: 'Anthropic — Model Context Protocol', url: 'https://www.anthropic.com/news/model-context-protocol' },
+      { label: 'Linux Foundation — AAIF Announcement', url: 'https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation' },
+      { label: 'Gartner — Top 10 Tech Trends 2025', url: 'https://www.gartner.com/en/newsroom/press-releases/2024-10-21-gartner-identifies-the-top-10-strategic-technology-trends-for-2025' },
+      { label: 'AI Mindset — Context Obesity', url: 'https://hackernoon.com/youre-not-burned-out-youve-got-context-obesity' },
     ],
   },
 
-  // TRANSITION Work → Sovereignty
+  // TRANSITION 2→3
   {
     id: 201,
+    title: 'how this enables the next shift',
+    subtitle: 'connected workflows prove themselves first in code.',
+    visual: 'bridge',
+    layout: 'center',
+    dark: true,
+    content: [
+      'when systems can orchestrate (call tools, coordinate services, verify outputs), **coding becomes the first domain** where agents ship production-ready work.',
+      '',
+      'code is measurable, testable, and valuable.',
+      'the perfect **testing ground**.',
+    ],
+  },
+
+  // WAVE 3: Coding Agents (was Wave 7) — INTRO
+  {
+    id: 20,
+    title: 'wave 3: coding agents ↔ authorship anxiety',
+    subtitle: 'coding becomes the first broadly proven agent category.',
+    visual: 'centaur',
+    layout: 'loop-intro',
+  },
+  // WAVE 3: Coding Agents — FULL
+  {
+    id: 21,
+    title: 'wave 3: coding agents ↔ authorship anxiety',
+    subtitle: 'coding becomes the first broadly proven agent category.',
+    visual: 'centaur',
+    layout: 'loop',
+    loopData: {
+      machine: 'systems write, refactor, test, ship.\nthe value is measurable; adoption is fast.\ncoding becomes the first broadly proven agent category.',
+      human: 'authorship anxiety rises: "what\'s mine if the machine did it?"\nfear of skill atrophy, status loss, erosion of craft.',
+      gap: 'when labor gets cheaper, identity gets more expensive.\nin a world where output is abundant, authorship becomes less about typing and more about **owning decisions**.',
+    },
+    sources: [
+      { label: 'OpenAI — SWE-Bench Verified', url: 'https://openai.com/index/introducing-swe-bench-verified/' },
+      { label: 'Anthropic — SWE-Bench Sonnet', url: 'https://www.anthropic.com/research/swe-bench-sonnet' },
+      { label: 'AI Mindset — Coding with Claude 3.5', url: 'https://t.me/ai_mind_set/282' },
+    ],
+  },
+  // WAVE 3: Coding Agents — EVIDENCE
+  {
+    id: 106,
+    title: 'coding: the evidence',
+    visual: 'centaur',
+    layout: 'loop-evidence',
+    loopNumber: 3,
+    evidenceData: {
+      keyStats: [
+        { value: '42%', label: 'GitHub Copilot market share (paid tools)', source: 'CB Insights' },
+        { value: '82%', label: 'Developers using AI assistants weekly', source: 'Stack Overflow 2025' },
+        { value: '41%', label: 'AI-generated code globally', source: 'GitHub 2025' },
+      ],
+      researchHighlights: [
+        '**Vibe Coding** named Word of the Year by Collins Dictionary',
+        'METR Study paradox: experienced devs **19% slower** with AI, believe **20% faster**',
+        'Cursor ARR: **$500M+**, Fortune 500 usage: **50%**',
+      ],
+      industryData: ['GitHub Copilot', 'Cursor', 'Claude Code', 'Windsurf', 'Replit'],
+    },
+    sources: [
+      { label: 'CB Insights — Coding AI Market Share', url: 'https://www.cbinsights.com/research/report/coding-ai-market-share-december-2025/' },
+      { label: 'Stack Overflow — Developer Survey 2025', url: 'https://survey.stackoverflow.co/2025/' },
+      { label: 'Anthropic — SWE-Bench Sonnet', url: 'https://www.anthropic.com/research/swe-bench-sonnet' },
+      { label: 'Karpathy — Vibe Coding Tweet', url: 'https://x.com/karpathy/status/1886192184808149383' },
+    ],
+  },
+
+  // TRANSITION 3→4
+  {
+    id: 202,
     title: 'how this enables the next shift',
     subtitle: 'when agents touch money, institutions demand rules.',
     visual: 'bridge',
     layout: 'center',
     dark: true,
     content: [
-      'when agentic labor becomes real and **impacts revenue**, nations and corporations rush to control the infrastructure.',
+      'as coding agents move from experiments to production (41% of global code is AI-generated), organizations face **real risk**:',
       '',
-      'the question shifts from "can ai work?" to **"whose switch is it?"**',
-      'sovereignty becomes the battleground.',
-    ],
-  },
-
-  // SHIFT 03: The Sovereignty (The Splinternet) — INTRO
-  {
-    id: 20,
-    title: 'shift 03: the sovereignty (the splinternet)',
-    subtitle: 'from global openness → fragmented stacks',
-    visual: 'globe',
-    layout: 'loop-intro',
-  },
-  // SHIFT 03: The Sovereignty (Splinternet) — FULL
-  {
-    id: 21,
-    title: 'shift 03: the sovereignty (the splinternet)',
-    subtitle: 'whose switch is it?',
-    visual: 'globe',
-    layout: 'loop',
-    loopData: {
-      machine: '**geopolitical fragmentation - the splinternet:** the end of "global ai." three distinct stacks emerge: **us ai** (corporate/closed - openai, anthropic), **china ai** (state-controlled - deepseek bypassing us norms), **eu ai** (regulated - ai act compliance). agi is now a national security asset on "war footing."\n\n**the copyright war - nyt vs. openai:** battle for "sovereignty of culture." nyt lawsuit alleges models **memorize and regurgitate** copyrighted content verbatim. the case determines if human culture belongs to creators or model weights.\n\n**eu ai act:** first comprehensive ai regulation. creates **regulatory gap** - eu ai is "safe but slow," us/china ai is "dangerous but fast."',
-      human: '**the guerrilla stack (byoai):** employees bring their own ai to bypass corporate limitations and censorship. "shadow ai" adoption - people use personal tools because corporate ai is blocked or neutered.\n\n**privacy inequality:** privacy officially becomes a **luxury good**. meta\'s "pay or consent" model in eu: pay €13/month or surrender to tracking. "privacy is for the rich" - if you can\'t pay, you are the product.\n\n**data sovereignty movement:** users demand "opt-out" rights - ability to prohibit training on their data. rise of "personal rag" and local-first architectures.',
-      gap: 'as ai becomes "aligned" to corporate/national values, you are talking to a constitutional filter. you lose objective context for a "safe narrative."',
-    },
-    sources: [
-      { label: 'Leopold Aschenbrenner — Situational Awareness', url: 'https://situational-awareness.ai/' },
-      { label: 'NYT vs OpenAI Lawsuit', url: 'https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html' },
-      { label: 'Wired — Meta Pay for Privacy', url: 'https://www.wired.com/story/meta-facebook-pay-for-privacy-europe/' },
-      { label: 'Balaji Srinivasan — Network State', url: 'https://thenetworkstate.com/' },
-    ],
-  },
-  // SHIFT 03: Sovereignty — EVIDENCE
-  {
-    id: 106,
-    title: 'the sovereignty: the evidence',
-    visual: 'globe',
-    layout: 'loop-evidence',
-    loopNumber: 3,
-    evidenceData: {
-      keyStats: [
-        { value: '3%', label: 'Paying users for AI (97% are the product)', source: 'Goldman Sachs' },
-        { value: '€13/mo', label: 'Meta\'s privacy price in Europe', source: 'Wired' },
-        { value: '3 Stacks', label: 'US (closed), China (state), EU (regulated) - global AI fragmentation', source: 'Multiple' },
-      ],
-      researchHighlights: [
-        '**$200B+** Big Tech CapEx for 2025 alone',
-        '**$2.1B** Reddit\'s data licensing deal with Google',
-        'EU AI Act creates first comprehensive regulation - **Regulatory Gap** between "safe but slow" vs "dangerous but fast"',
-        'NYT lawsuit alleges models **memorize and regurgitate** copyrighted content verbatim',
-      ],
-      industryData: ['US AI Stack', 'China AI Stack', 'EU AI Act', 'Network State', 'Shadow AI'],
-    },
-    sources: [
-      { label: 'Leopold Aschenbrenner — Situational Awareness', url: 'https://situational-awareness.ai/' },
-      { label: 'Marc Andreessen — Techno-Optimist Manifesto', url: 'https://a16z.com/the-techno-optimist-manifesto/' },
-      { label: 'Balaji Srinivasan — Network State', url: 'https://thenetworkstate.com/' },
-      { label: 'Wired — Privacy Inequality', url: 'https://www.wired.com/story/meta-facebook-pay-for-privacy-europe/' },
-    ],
-  },
-
-  // ═══════════════════════════════════════════════════════════════════
-  // 🧠 COGNITION LAYER — Reasoning, Knowledge, Discovery
-  // ═══════════════════════════════════════════════════════════════════
-
-  // TRANSITION Foundation → Cognition
-  {
-    id: 202,
-    title: 'layer transition: foundation → cognition',
-    subtitle: 'when infrastructure exists, intelligence accelerates.',
-    visual: 'bridge',
-    layout: 'center',
-    dark: true,
-    content: [
-      'with **energy infrastructure**, **agentic labor**, and **geopolitical stacks** in place, ai moves from raw compute to **reasoning capability**.',
+      'liability, security, compliance.',
       '',
-      'the question shifts from "can we power it?" to **"can we trust how it thinks?"**',
-      'cognition becomes the new frontier.',
+      'regulation stops being theoretical and becomes **urgent**.',
     ],
   },
 
-  // SHIFT 04: The Reasoning (The Brain) — INTRO
+  // WAVE 4: Sovereign AI (was Wave 3) — INTRO
   {
     id: 12,
-    title: 'shift 04: the reasoning (the brain)',
-    subtitle: 'from chatbots to thinking models',
-    visual: 'audit',
+    title: 'wave 4: sovereign ai',
+    subtitle: 'regulation matures. institutions define "unacceptable risk."',
+    visual: 'locked',
     layout: 'loop-intro',
   },
-  // SHIFT 04: The Reasoning (The Brain) — FULL
+  // WAVE 4: Sovereign AI — FULL
   {
     id: 13,
-    title: 'shift 04: the reasoning (the brain)',
-    subtitle: 'from probabilistic prediction → inference-time logic (system 2 thinking)',
-    visual: 'audit',
+    title: 'wave 4: sovereign ai',
+    subtitle: 'regulation matures. institutions define "unacceptable risk."',
+    visual: 'locked',
     layout: 'loop',
     loopData: {
-      machine: '**sequoia\'s act two:** the fundamental shift from "act 1" (probabilistic token prediction - chatgpt era) to **"act 2"** (reasoning and inference-time compute - o1 era). "act 1 was about prompts. act 2 is about reasoning."\n\n**system 1 vs system 2 architecture:** transition from fast, instinctive responses (system 1) to slow, deliberate, multi-step logical reasoning (system 2). models use **chain of thought (cot)** and **star** via reinforcement learning to "think" before answering.\n\n**scientific compression:** condensing **100 years of scientific progress into 10 years**. prediction: models will exceed nobel-level intelligence in specialized domains (biology, math, physics) by 2026.',
-      human: '**auditable work:** users no longer trust "magic" speed. they demand to see the **reasoning trace** - the chain of thought that led to the conclusion. transparency over velocity.\n\n**logic auditor role:** human value shifts from execution to **verifying machine logic**. we become auditors of ai reasoning paths.\n\n**the reasoning reliability gap:** **48% of reasoning tasks** still produce errors in complex scenarios. reasoning models haven\'t eliminated hallucinations - they\'ve made them more convincing.',
-      gap: 'a model processes 1,000 reasoning steps in seconds; a human follows five. this leads to meaning dilution: we accept conclusions because auditing the path is too exhausting.',
+      machine: 'sovereign ai becomes strategy: data residency, regulated stacks, local inference, compliant clouds.\n"where data lives" becomes as important as "what the model can do."',
+      human: 'a personal version emerges: **neo-sovereignty**.\npeople build their own spaces (private notes, smaller circles, local tools) because public feeds feel noisy, extractive, increasingly synthetic.',
+      gap: 'trust splits: people want innovation and guarantees.\nfor orgs it\'s compliance and risk; for individuals it\'s privacy, boundaries, and control over the context that shapes thinking.',
     },
     sources: [
-      { label: 'Sequoia Capital — Generative AI Act Two', url: 'https://www.sequoiacap.com/article/generative-ai-act-two/' },
-      { label: 'Li et al. — Reasoning LLMs Survey', url: 'https://arxiv.org/abs/2502.17419' },
-      { label: 'Dario Amodei — Machines of Loving Grace', url: 'https://darioamodei.com/machines-of-loving-grace' },
-      { label: 'Korra AI — Reasoning Reliability Gap', url: 'https://korra.ai/' },
+      { label: 'EUR-Lex — AI Act (EU 2024/1689)', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng' },
+      { label: 'McKinsey — Sovereign AI in Europe', url: 'https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/accelerating-europes-ai-adoption-the-role-of-sovereign-ai' },
     ],
   },
-  // SHIFT 04: Reasoning — EVIDENCE
+  // WAVE 4: Sovereign AI — EVIDENCE
   {
     id: 102,
-    title: 'the reasoning: the evidence',
-    visual: 'audit',
+    title: 'sovereignty: the evidence',
+    visual: 'locked',
     layout: 'loop-evidence',
     loopNumber: 4,
     evidenceData: {
       keyStats: [
-        { value: '126%', label: 'Productivity boost from AI Copilots', source: 'Qodo' },
-        { value: '21%', label: 'Quality degradation when prioritizing speed', source: 'Nielsen Norman Group' },
-        { value: '48%', label: 'Error rate in complex reasoning tasks', source: 'Korra AI' },
+        { value: 'Aug 2024', label: 'EU AI Act entered into force', source: 'EUR-Lex' },
+        { value: 'Aug 2026', label: 'Full AI Act applicability', source: 'EUR-Lex' },
+        { value: '30%', label: 'GenAI projects abandoned after PoC (by end 2025)', source: 'Gartner' },
       ],
       researchHighlights: [
-        '**2026-2028:** Human data exhaustion timeline (Epoch AI)',
-        '**100 → 10 years:** Scientific compression timeline (Amodei)',
-        'Models use **Chain of Thought (CoT)** and **STaR** via reinforcement learning',
-        '**o3** achieves 71.7% on SWE-bench Verified, 96.7% on AIME math benchmark',
+        '**GPAI Code of Practice** published July 2025 – voluntary compliance tool',
+        'US Executive Order (Dec 2025): centralizes AI policy, federal preemption',
+        'California: AI safety laws, whistleblower protections, watermarking',
       ],
-      industryData: ['OpenAI o3', 'DeepSeek R1', 'Claude 3.7 Sonnet', 'Gemini 2.0'],
+      industryData: ['EU AI Act', 'US Executive Orders', 'California RAISE Act', 'GDPR'],
     },
     sources: [
-      { label: 'Sequoia Capital — Generative AI Act Two', url: 'https://www.sequoiacap.com/article/generative-ai-act-two/' },
-      { label: 'Li et al. — Reasoning LLMs Survey', url: 'https://arxiv.org/abs/2502.17419' },
-      { label: 'Epoch AI — Data Limits', url: 'https://epoch.ai/blog/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data' },
-      { label: 'Qodo — Productivity vs Quality', url: 'https://www.qodo.ai/' },
+      { label: 'EUR-Lex — AI Act (EU 2024/1689)', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng' },
+      { label: 'National Law Review — 2026 AI Outlook', url: 'https://natlawreview.com/article/2026-outlook-artificial-intelligence' },
+      { label: 'McKinsey — Sovereign AI in Europe', url: 'https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/accelerating-europes-ai-adoption-the-role-of-sovereign-ai' },
     ],
   },
 
-  // TRANSITION Reasoning → Knowledge
+  // TRANSITION 4→5
   {
     id: 203,
     title: 'how this enables the next shift',
-    subtitle: 'when ai can think, it needs context.',
+    subtitle: 'one technology, many governance realities.',
     visual: 'bridge',
     layout: 'center',
     dark: true,
     content: [
-      'reasoning without context is blind logic.',
+      'as regulation matures, it doesn\'t unify — it **fragments**.',
       '',
-      'system 2 thinking creates demand for **massive context windows** and **enterprise knowledge integration**.',
-      'the question shifts from "can it reason?" to **"can it access the right information?"**',
+      'US prioritizes frontier innovation.',
+      'EU enforces rights-first compliance.',
+      'China builds state-aligned utility.',
+      '',
+      'the same capability reads differently **depending on where you are**.',
     ],
   },
 
-  // SHIFT 05: The Knowledge (The Memory) — INTRO
+  // WAVE 5: Regional Frames (was Wave 8) — INTRO
   {
     id: 22,
-    title: 'shift 05: the knowledge (the memory)',
-    subtitle: 'from information hoarding to context filtering',
-    visual: 'tangle',
+    title: 'wave 5: regional frames',
+    subtitle: 'ai progress is global, but governance differs by region.',
+    visual: 'mirror',
     layout: 'loop-intro',
   },
-  // SHIFT 05: The Knowledge (The Memory) — FULL
+  // WAVE 5: Regional Frames — FULL
   {
     id: 23,
-    title: 'shift 05: the knowledge (the memory)',
-    subtitle: 'from information access → context architecture',
-    visual: 'tangle',
+    title: 'wave 5: regional frames',
+    subtitle: 'ai progress is global, but governance differs by region.',
+    visual: 'mirror',
     layout: 'loop',
     loopData: {
-      machine: '**model context protocol (mcp):** anthropic\'s "usb port for ai" - universal standard for connecting ai to data ecosystems (google drive, slack, git) without custom integrations. this is the infrastructure answer to data silos.\n\n**the hallucination tax:** **$67 billion** in enterprise losses from context mismanagement and ai errors. the shift from "paying for ai" to "paying to fix ai mistakes."\n\n**1m token windows:** models can now hold massive context, but retrieval quality degrades beyond human working memory limits (7 items).',
-      human: '**context obesity (the diagnosis):** "you\'re not burned out, you have context obesity." a cognitive state caused by overconsumption of low-value data. burnout is **working memory overflow** - consuming more information than can be metabolized into meaning.\n\n**context collapse (marwick & boyd):** the academic term for when personal, professional, and public contexts blur into one. ai radicalizes this - agents extract your words from context and feed them to models.\n\n**search waste:** employees spend **30% of work time** searching for internal information. knowledge access isn\'t the problem - knowledge **discovery** and **curation** are.',
-      gap: '1m token windows vs. human limit (7 items). we have tmi (too much information) but zero insight. context collapse blurs professional and private life.',
+      machine: 'policy, procurement, infrastructure, and institutional trust vary.\nai progress is global, but governance and deployment realities differ by region.',
+      human: 'moral frames diverge:\nus: frontier / market\neu: rights / compliance\nothers: utility / stability / state capacity (varies)',
+      gap: 'a global story can\'t be one voice. the same capability reads as liberation, risk, or stability tool depending on the frame.\n**pluralism is not optional** — if you ignore frames, you misunderstand people (or get misunderstood).',
     },
     sources: [
-      { label: 'Anthropic — Model Context Protocol', url: 'https://www.anthropic.com/news/model-context-protocol' },
-      { label: 'Korra AI — $67B Hallucination Tax', url: 'https://korra.ai/the-67-billion-warning-how-ai-hallucinations-hurt-enterprises-and-how-to-stop-them/' },
-      { label: 'AI Mindset/Hackernoon — Context Obesity', url: 'https://hackernoon.com/youre-not-burned-out-youve-got-context-obesity' },
-      { label: 'Gartner — Knowledge Management', url: 'https://www.gartner.com/' },
+      { label: 'Pew Research — Trust in EU, US, China AI Regulation', url: 'https://www.pewresearch.org/2025/10/15/trust-in-the-eu-u-s-and-china-to-regulate-use-of-ai/' },
+      { label: 'Stanford HAI — AI Index 2025: Public Opinion', url: 'https://hai.stanford.edu/ai-index/2025-ai-index-report/public-opinion' },
+      { label: 'European Commission — AI Research Publications', url: 'https://op.europa.eu/en/publication-detail/-/publication/4ee8799e-142c-11f0-b1a3-01aa75ed71a1/language-en' },
+      { label: 'Plurality Project (GitHub)', url: 'https://github.com/pluralitybook/plurality' },
     ],
   },
-  // SHIFT 05: The Knowledge (The Memory) — EVIDENCE
+  // WAVE 5: Regional Frames — EVIDENCE
   {
     id: 107,
-    title: 'the knowledge: the evidence',
-    visual: 'tangle',
+    title: 'regional frames: the evidence',
+    visual: 'mirror',
     layout: 'loop-evidence',
     loopNumber: 5,
     evidenceData: {
       keyStats: [
-        { value: '$67B', label: 'Annual financial risk from unmanaged context/hallucinations', source: 'Korra AI' },
-        { value: '30%', label: 'Work time lost to internal search', source: 'Gartner' },
-        { value: '1M tokens', label: 'Model context window vs 7 items human working memory limit', source: 'Anthropic' },
+        { value: '78%', label: 'Organizations using AI (up from 55% in 2023)', source: 'McKinsey 2025' },
+        { value: '71%', label: 'Using GenAI in business functions', source: 'McKinsey 2025' },
+        { value: '24x', label: 'Hang Seng Tech P/E vs 31x Nasdaq', source: 'UBS 2025' },
       ],
       researchHighlights: [
-        'MCP Protocol becoming industry standard - donated to **Linux Foundation**',
-        '**59%** of developers use 3+ AI tools regularly',
-        '**51%** daily AI usage rate among developers',
-        'Context Collapse blurs personal, professional, and public contexts',
+        'US: **frontier / market** frame – innovation first',
+        'EU: **rights / compliance** frame – regulation first',
+        'China: **utility / state capacity** – local AI champions emerging',
       ],
-      industryData: ['MCP Protocol', 'Enterprise RAG', 'Intention OS', 'Context Dieting'],
+      industryData: ['EU AI Act', 'US Executive Orders', 'DeepSeek', 'Plurality'],
     },
     sources: [
-      { label: 'Anthropic — Model Context Protocol', url: 'https://www.anthropic.com/news/model-context-protocol' },
-      { label: 'Korra AI — $67B Hallucination Tax', url: 'https://korra.ai/the-67-billion-warning-how-ai-hallucinations-hurt-enterprises-and-how-to-stop-them/' },
-      { label: 'Gartner — Knowledge Management', url: 'https://www.gartner.com/' },
-      { label: 'StackOverflow — Developer Survey', url: 'https://survey.stackoverflow.co/2025/ai' },
+      { label: 'Pew Research — Trust in AI Regulation', url: 'https://www.pewresearch.org/2025/10/15/trust-in-the-eu-u-s-and-china-to-regulate-use-of-ai/' },
+      { label: 'Stanford HAI — AI Index 2025', url: 'https://hai.stanford.edu/ai-index/2025-ai-index-report/public-opinion' },
+      { label: 'McKinsey — State of AI 2025', url: 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai' },
     ],
   },
 
-  // TRANSITION Knowledge → Discovery
+  // TRANSITION 5→6
   {
     id: 204,
     title: 'how this enables the next shift',
-    subtitle: 'when ai has context, it can generate knowledge.',
+    subtitle: 'governance becomes code.',
     visual: 'bridge',
     layout: 'center',
     dark: true,
     content: [
-      'with reasoning capability and massive context integration, ai moves from **reading science to generating science**.',
+      'regional values don\'t stay abstract — they get **embedded into models** through post-training.',
       '',
-      'the bottleneck shifts from computation to **verification**.',
-      'discovery bloat: ai proposes 1,000 molecules; we test one.',
+      'refusal patterns, safety postures, and default behaviors reflect the institutional frames that regulate them.',
+      '',
+      'the model you use **carries a worldview**.',
     ],
   },
 
-  // SHIFT 06: The Discovery (The Frontier) — INTRO
+  // WAVE 6: Post-Training Default Values (was Wave 9) — INTRO
   {
     id: 24,
-    title: 'shift 06: the discovery (the frontier)',
-    subtitle: 'from reading science → generating science',
-    visual: 'spark',
+    title: 'wave 6: post-training default values',
+    subtitle: 'post-training defines behavior: refusals, style, safety posture.',
+    visual: 'filter',
     layout: 'loop-intro',
   },
-  // SHIFT 06: The Discovery (The Frontier) — FULL
+  // WAVE 6: Post-Training Default Values — FULL
   {
     id: 25,
-    title: 'shift 06: the discovery (the frontier)',
-    subtitle: 'from literature review to generative discovery',
-    visual: 'spark',
+    title: 'wave 6: post-training default values',
+    subtitle: 'post-training defines behavior: refusals, style, safety posture.',
+    visual: 'filter',
     layout: 'loop',
     loopData: {
-      machine: '**deep research agents:** ai reads millions of papers to generate hypotheses humans cannot conceive. from "literature review" to "hypothesis generation."\n\n**generative biology:** moving from "reading" biology to "writing" it. alphafold 3 predicts protein structures; next step is **designing** new proteins, materials, and molecules that don\'t exist in nature.\n\n**data limits - the exhaustion:** quality human-generated data **exhausted by 2026-2028**. models now train on **ai-generated synthetic data**, verified by system 2 reasoning.',
-      human: '**the time refund:** scientists freed from tedious manual labor (literature review, data cleaning) to focus on high-level experimental design and cross-domain synthesis.\n\n**data inbreeding crisis:** without fresh human data, ai degrades. **humans become the only source of novelty** - the "organic data" that prevents model collapse. human creativity is now a strategic resource.\n\n**the hope/fear axis:** hope for longevity breakthroughs and disease cures vs fear of losing control over scientific truth and safety protocols.',
-      gap: 'ai proposes 1,000 molecules; we test one. discovery bloat stalls breakthroughs via physical testing capacity. the bottleneck of "generated future."',
+      machine: 'defaults become the product.\nwhat a model tends to amplify.\npost-training defines behavior: refusals, style, safety posture.',
+      human: 'values fragment.\npeople cluster into micro-realities and micro-truths.\nthe cost of disagreement rises; the temptation to outsource judgment rises too.',
+      gap: 'every model has defaults. every default embeds a worldview.\n**the human question becomes:** whose values are embedded in the tool you use daily — and what do they quietly optimize for?',
     },
     sources: [
-      { label: 'Dario Amodei — Machines of Loving Grace', url: 'https://darioamodei.com/machines-of-loving-grace' },
-      { label: 'Epoch AI — Data Exhaustion Timeline', url: 'https://epoch.ai/blog/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data' },
-      { label: 'Gretel — Synthetic Data Goes Mainstream', url: 'https://gretel.ai/blog/2025-the-year-synthetic-data-goes-mainstream' },
-      { label: 'Shumailov et al. — Model Collapse', url: 'https://arxiv.org/abs/2305.17493' },
+      { label: 'Ouyang et al. — InstructGPT', url: 'https://arxiv.org/abs/2203.02155' },
+      { label: 'Bai et al. — Constitutional AI', url: 'https://arxiv.org/abs/2212.08073' },
+      { label: 'Investigating Local Censorship (arXiv 2025)', url: 'https://arxiv.org/pdf/2505.12625' },
     ],
   },
-  // SHIFT 06: Discovery — EVIDENCE
+  // WAVE 6: Post-Training — EVIDENCE
   {
     id: 108,
-    title: 'the discovery: the evidence',
-    visual: 'spark',
+    title: 'defaults: the evidence',
+    visual: 'filter',
     layout: 'loop-evidence',
     loopNumber: 6,
     evidenceData: {
       keyStats: [
-        { value: '100 → 10', label: 'Scientific progress compression timeline (years)', source: 'Dario Amodei' },
-        { value: '78%', label: 'Improvement in research speed with AI tools', source: 'StackOverflow' },
-        { value: '2026-2028', label: 'Human data exhaustion timeline', source: 'Epoch AI' },
+        { value: '233', label: 'AI incidents tracked (+56% YoY)', source: 'AI Incident Database' },
+        { value: '39%', label: 'AI customer service bots pulled/reworked', source: 'Industry surveys' },
+        { value: '76%', label: 'Enterprises with human-in-the-loop', source: 'Industry surveys' },
       ],
       researchHighlights: [
-        'AlphaFold 3 predicts protein structures - next step is **designing** new proteins that don\'t exist in nature',
-        'Models now train on **AI-generated synthetic data**, verified by System 2 reasoning',
-        '**Model Collapse** (Shumailov et al.): if AI trains on AI-generated data recursively, models degrade - humans become only source of "clean signal"',
-        '1,000:1 ratio: AI proposes 1,000 molecules; humans test one - the verification bottleneck',
+        '**InstructGPT/RLHF** set the template for post-training alignment',
+        '**Constitutional AI** (Anthropic) – values as code',
+        'Regional censorship patterns diverge across models',
       ],
-      industryData: ['DeepMind AlphaFold', 'Deep Research Agents', 'Synthetic Data', 'World Labs'],
+      industryData: ['RLHF', 'Constitutional AI', 'DPO', 'Safety tuning'],
     },
     sources: [
-      { label: 'Dario Amodei — Machines of Loving Grace', url: 'https://darioamodei.com/machines-of-loving-grace' },
-      { label: 'Epoch AI — Data Limits', url: 'https://epoch.ai/blog/will-we-run-out-of-data-limits-of-llm-scaling-based-on-human-generated-data' },
-      { label: 'Gretel — Synthetic Data', url: 'https://gretel.ai/blog/2025-the-year-synthetic-data-goes-mainstream' },
-      { label: 'Shumailov et al. — Model Collapse', url: 'https://arxiv.org/abs/2305.17493' },
+      { label: 'Ouyang et al. — InstructGPT', url: 'https://arxiv.org/abs/2203.02155' },
+      { label: 'Bai et al. — Constitutional AI', url: 'https://arxiv.org/abs/2212.08073' },
+      { label: 'AI Incident Database', url: 'https://incidentdatabase.ai/' },
     ],
   },
 
   // ═══════════════════════════════════════════════════════════════════
-  // 🛡️ INTERFACE LAYER — Coding, Matter, Defense
+  // ADOPTION WAVES (7-8) — Parallel adoption track
   // ═══════════════════════════════════════════════════════════════════
 
-  // TRANSITION Cognition → Interface
+  // Section marker — Adoption Waves
   {
     id: 206,
-    title: 'layer transition: cognition → interface',
-    subtitle: 'when ai can think and discover, it starts to build.',
-    visual: 'bridge',
-    layout: 'center',
+    title: 'adoption waves',
+    subtitle: 'how humans respond to the core shifts',
+    visual: 'SECTION_DIVIDER',
+    sectionTitle: 'adoption',
     dark: true,
-    content: [
-      'with reasoning, knowledge access, and discovery capabilities, ai moves from **abstract intelligence to practical execution**.',
-      '',
-      'the question shifts from "can it think?" to **"can it ship?"**',
-      'interface becomes the battleground.',
-    ],
+    caption: 'parallel patterns of human adaptation and adoption.',
+    layout: 'center',
   },
 
-  // SHIFT 07: The Craft (The End of Syntax) — INTRO
+  // WAVE 7: On-Device Models ↔ Privacy as Status (was Wave 5) — INTRO
   {
     id: 16,
-    title: 'shift 07: the craft (the end of syntax)',
-    subtitle: 'from writing code to architecting intent',
-    visual: 'centaur',
+    title: 'wave 7: on-device models ↔ privacy as status',
+    subtitle: 'smaller models get good enough and spread everywhere.',
+    visual: 'unlocked',
     layout: 'loop-intro',
-  },
-  // SHIFT 07: The Craft (The End of Syntax) — FULL
-  {
-    id: 17,
-    title: 'shift 07: the craft (the end of syntax)',
-    subtitle: 'from syntax mastery → vibe coding (and the integrity crisis)',
-    visual: 'centaur',
-    layout: 'loop',
-    loopData: {
-      machine: '**code as commodity:** **65% of new code** is ai-influenced or ai-generated at companies like google. **73% of developers** use ai coding tools regularly.\n\n**amazon q developer:** saved **4,500 developer-years** on java application upgrades. **$260m** in infrastructure savings from optimized code. **79% of auto-generated changes** accepted without modification.\n\n**vibe coding:** programming shifts to natural language intent. the machine handles implementation. coding tools (cursor, replit) enter **top 100 gen ai apps** consumer ranking - coding becomes mass-market.',
-      human: '**the trust collapse:** **46% of developers** distrust ai-generated code. only **3.1% highly trust** ai accuracy for complex tasks. the **trust inversion**: 84% use the tools, but trust is plummeting.\n\n**the integrity crisis:** **65% report ai misses context** in code generation. "code generation is easy, code integrity is hard." ai creates "legacy on day one" - code that works but is unmaintainable.\n\n**code churn explosion:** **50% increase** in code churn (rewrites and deletions). ai produces code fast, but developers spend saved time on reviews and fixes.',
-      gap: 'building things we don\'t understand leads to vibe debt. we pilot ships with black-box internal wiring. creating code is easy; maintaining it is the new hell.',
-    },
-    sources: [
-      { label: 'Amazon — Amazon Q Developer', url: 'https://aws.amazon.com/q/developer/' },
-      { label: 'StackOverflow — 2025 Developer Survey', url: 'https://survey.stackoverflow.co/2025/ai' },
-      { label: 'Qodo — Code Integrity Report', url: 'https://www.qodo.ai/' },
-      { label: 'GitClear — Code Churn Analysis', url: 'https://www.gitclear.com/coding_on_copilot_data_2024_report' },
-    ],
   },
   // WAVE 7: On-Device Models — FULL
   {
@@ -1127,29 +1114,6 @@ export const RAW_SLIDES: SlideData[] = [
     ],
   },
 
-  // Lab Evidence & Credibility (moved to end)
-  {
-    id: 43,
-    title: '11 / lab evidence & credibility',
-    subtitle: 'hardened by the field notes of 1,500+ lab participants.',
-    visual: 'STATS_ANIMATED',
-    layout: 'stats',
-    stats: [
-      { value: '1,500+', label: 'lab participants', color: 'red' },
-      { value: '72+', label: 'primary sources', color: 'black' },
-      { value: '8', label: 'deep interviews', color: 'black' },
-      { value: '12', label: 'academic papers', color: 'red' },
-      { value: '25+', label: 'industry reports', color: 'black' },
-    ],
-    content: [
-      'this report is hardened by the field notes and artifacts of our research:',
-      '**ivanov.aimindset.org** — protecting the psyche in the age of machine intimacy.',
-      '**intention.aimindset.org** — managing attention when context explodes.',
-      '**spiridonov.aimindset.org** — why pragmatic romanticism is the only defense against cold machine logic.',
-    ],
-    source: { label: 'AI Mindset Labs', url: 'https://aimindset.org/ai-mindset-w25' },
-  },
-
   // ═══════════════════════════════════════════════════════════════════
   // thank you
   // ═══════════════════════════════════════════════════════════════════
@@ -1181,7 +1145,10 @@ export const RAW_SLIDES: SlideData[] = [
 // ============================================================
 // Build SLIDES array with proper IDs and SECTIONS
 // ============================================================
-export const SLIDES = RAW_SLIDES;
+export const SLIDES: SlideData[] = RAW_SLIDES.map((slide, index) => ({
+  ...slide,
+  id: index + 1,
+}));
 
 export const SECTIONS: Section[] = [
   { title: 'intro', startSlide: 0 },
